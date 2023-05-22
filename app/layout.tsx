@@ -6,11 +6,6 @@ import { SessionProvider } from "next-auth/react"
 import { createContext, useState, useEffect } from "react"
 import { Storefront } from "@/utils"
 
-export const metadata = {
-  title: "Meows and Co.",
-  description: "Online Clothing Shop",
-}
-
 export const CartContext = createContext<any>({})
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -35,17 +30,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     setCartCount,
     storageLoaded,
     setStorageLoaded,
-  }
-
-  type CartInfo = {
-    data: {
-      cartCreate: {
-        cart: {
-          checkoutUrl: string
-          id: string
-        }
-      }
-    }
   }
 
   // on render, grab the cartCount and cartID data from localstorage, or create a new cart
