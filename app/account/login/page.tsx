@@ -70,7 +70,7 @@ export default function LogIn() {
             Sign in
           </button>
           <p className="text-center mt-1">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/account/register" className="text-blue-500 underline">
               Register
             </Link>

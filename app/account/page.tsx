@@ -35,44 +35,43 @@ type CustomerData = {
   }
 }
 
-const account = () => {
+const Account = () => {
   const data = useSession()
   const [loading, setLoading] = useState(true)
   const [customerData, setCustomerData] = useState<CustomerData>()
 
-  const customerQuery = `
-    query getCustomer($input: String!) {
-      customer(customerAccessToken: $input) {
-        email
-        orders(first: 100) {
-          edges {
-            node {
-              processedAt
-              totalPrice {
-                amount
-              }
-              lineItems(first: 100) {
-                nodes {
-                  title
-                  variant {
-                    image {
-                      url
-                    }
-                  }
-                  originalTotalPrice {
+  useEffect(() => {
+    const getCustomerData = async () => {
+      const customerQuery = `
+        query getCustomer($input: String!) {
+          customer(customerAccessToken: $input) {
+            email
+            orders(first: 100) {
+              edges {
+                node {
+                  processedAt
+                  totalPrice {
                     amount
+                  }
+                  lineItems(first: 100) {
+                    nodes {
+                      title
+                      variant {
+                        image {
+                          url
+                        }
+                      }
+                      originalTotalPrice {
+                        amount
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    }
-  `
-
-  useEffect(() => {
-    const getCustomerData = async () => {
+      `
       const user = await Storefront(customerQuery, "no-store", { input: data?.data?.user?.access })
       setCustomerData(user.data)
     }
@@ -145,4 +144,4 @@ const account = () => {
   )
 }
 
-export default account
+export default Account
