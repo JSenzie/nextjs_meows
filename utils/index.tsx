@@ -1,5 +1,5 @@
 export async function Storefront(query: string, store: RequestCache, variables = {}) {
-  const response = await fetch(process.env.NEXT_PUBLIC_API_URL as string, {
+  const response = await fetch("https://meows-and-co.myshopify.com/api/2023-04/graphql.json", {
     cache: store,
     method: "POST",
     headers: {
