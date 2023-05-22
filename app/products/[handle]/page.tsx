@@ -100,7 +100,7 @@ export default async function Product({ params }: { params: { handle: string } }
 
   // create the page that is returned when an invalid product is passed into the slug
   if (productByHandle === null) {
-    return "asd"
+    return "aasdasd"
   }
 
   return (
