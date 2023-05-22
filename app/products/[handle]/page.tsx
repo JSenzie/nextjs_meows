@@ -86,7 +86,7 @@ export async function generateStaticParams() {
     data: {
       products: { edges },
     },
-  } = await Storefront(allHandlesQuery, "no-cache")
+  } = await Storefront(allHandlesQuery, "no-store")
 
   return edges.map((h: Handle) => ({
     handle: h.node.handle,
