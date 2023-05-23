@@ -4,7 +4,6 @@ const nextConfig = {
     appDir: true,
   },
   env: {
-    NEXTAUTH_SECRET: "likethistodieinstantly",
     NEXT_PUBLIC_API_URL: "https://meows-and-co.myshopify.com/api/2023-04/graphql.json",
     NEXT_PUBLIC_ACCESS_TOKEN: "7b1b83ec74ae9e48c615ef981872b2a7",
   },
