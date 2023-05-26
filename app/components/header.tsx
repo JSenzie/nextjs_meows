@@ -2,10 +2,10 @@
 
 import Link from "next/link"
 import { CartContext } from "../layout"
-import React, { FormEvent, useContext, Fragment, useState, useEffect } from "react"
+import React, { FormEvent, useContext, Fragment, useState } from "react"
 import { useRouter } from "next/navigation"
 import { ShoppingCartIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
-import { Popover, Transition, Dialog } from "@headlessui/react"
+import { Popover, Transition } from "@headlessui/react"
 import { useSession, signOut } from "next-auth/react"
 import Cart from "./cart"
 

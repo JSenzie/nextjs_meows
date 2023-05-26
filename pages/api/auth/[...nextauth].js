@@ -5,7 +5,7 @@ import { Storefront } from "@/utils"
 export const authOptions = {
   session: {
     strategy: "jwt",
-    maxAge: 60 * 60 * 24 * 7,
+    maxAge: 60 * 60 * 24 * 7 * 4,
   },
   providers: [
     CredentialsProvider({

@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const productsQuery = `
   query Products($query: String) {
-    products(first: 8, query: $query) {
+    products(first: 248, query: $query) {
       edges {
         node {
           title
