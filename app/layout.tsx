@@ -40,11 +40,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       setCartCount(JSON.parse(localStorage.getItem("cartCount") || "0"))
     }
 
+    // If no cart exists in local storage, create a new cart and enter it into state and local storage, else pull cart info from local storage and set in state
     if (!localStorage.getItem("cartInfo")) {
       const getNewCart = async () => {
         const newCartData = await Storefront(cartQuery, "no-store")
         localStorage.setItem("cartInfo", JSON.stringify(newCartData.data.cartCreate.cart))
-        setCartInfo(newCartData)
+        setCartInfo(newCartData.data.cartCreate.cart)
       }
 
       try {

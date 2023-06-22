@@ -33,6 +33,7 @@ const AddToCart = (props: ItemProps) => {
     const addedToCart = await Storefront(addToCartQuery, "no-store", { cartId: cartInfo.id, lines: [{ quantity: 1, merchandiseId: props.itemID }] })
 
     if (!addedToCart?.data?.cartLinesAdd?.userErrors[0]) {
+      console.log(addedToCart)
       setCartCount(addedToCart.data.cartLinesAdd.cart.totalQuantity)
       setSuccess(true)
       setLoading(false)
